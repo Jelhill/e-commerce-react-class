@@ -1,0 +1,17 @@
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background-color: antiquewhite;
+}
+
+.header-main ul {
+    display: flex;
+}
+
+.header-main ul li {
+    list-style: none;
+    margin-right: 25px;
+    font-size: 19px;
+    cursor: pointer;
+}
