@@ -15,3 +15,22 @@
     font-size: 19px;
     cursor: pointer;
 }
+
+.carts-div {
+    position: relative;
+    margin-top: 10px;
+}
+
+.circle {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+}
+
