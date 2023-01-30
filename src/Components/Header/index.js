@@ -6,9 +6,10 @@ import { setShowLoginOrPassword} from '../../Redux/reducers/userReducer'
 import cart from './carts.png'
 const Header = (props) => {
     const currentPath = useLocation().pathname
-    console.log(("currentPath", currentPath))
-    const state = useSelector((state) => state.userReducer) 
-    const { showLoginOrPassword} = state
+    const state = useSelector((state) => state) 
+    const { userReducer, productReducer } =  state
+    const { showLoginOrPassword} = userReducer
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -22,6 +23,7 @@ const Header = (props) => {
     return (
         <div className='header-main'>
             <ul>
+                <li><Link to="/">Home</Link></li>
                 <li>Fashion</li>
                 <li>Electronics</li>
                 <li>Babies Section</li>
@@ -30,8 +32,8 @@ const Header = (props) => {
                 <li>Gadgets</li>
             </ul>
             <div className="carts-div">
-                <img src={cart} alt="cart"/>
-                <div className="circle">4</div>
+               <Link to="/cart"> <img src={cart} alt="cart"/></Link>
+                {!productReducer.cartItems.length ? null : <div className="circle">{productReducer.cartItems.length}</div>}
             </div>
         {
             showLoginOrPassword && <ul>
